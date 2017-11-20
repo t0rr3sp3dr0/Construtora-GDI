@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.5" orientation="VERTICAL" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="systems.singularity.buildware.gui.FornecedoresCadastroController">
+   <items>
+       <VBox>
+          <children>
+              <TableView fx:id="fornecedoresTableView" minHeight="120.0" VBox.vgrow="ALWAYS">
+                  <columns>
+                      <TableColumn fx:id="fornecedorTableColumn" minWidth="256.0" prefWidth="256.0" text="Fornecedor" />
+                      <TableColumn fx:id="cnpjFornecedorTableColumn" minWidth="128.0" prefWidth="128.0" text="CNPJ" />
+                      <TableColumn fx:id="emailFornecedorTableColumn" minWidth="192.0" prefWidth="192.0" text="e-mail" />
+                  </columns>
+              </TableView>
+              <HBox>
+                 <children>
+                     <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" HBox.hgrow="NEVER">
+                        <items>
+                            <Button fx:id="addFornecedorButton" mnemonicParsing="false">
+                                <graphic>
+                                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                                       <image>
+                                           <Image url="@/icons/ic_add.png" />
+                                       </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Button fx:id="editFornecedorButton" mnemonicParsing="false">
+                                <graphic>
+                                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                                       <image>
+                                           <Image url="@/icons/ic_edit.png" />
+                                       </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Button fx:id="saveFornecedorButton" mnemonicParsing="false">
+                                <graphic>
+                                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                                       <image>
+                                           <Image url="@/icons/ic_save.png" />
+                                       </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </items>
+                     </ToolBar>
+                     <ToolBar prefHeight="40.0" HBox.hgrow="ALWAYS">
+                        <items>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                               <children>
+                                   <ImageView fitHeight="17.0" fitWidth="17.0">
+                                       <HBox.margin>
+                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                      <image>
+                                          <Image url="@/icons/ic_search.png" />
+                                      </image>
+                                   </ImageView>
+                                   <TextField fx:id="searchFornecedorTextField" promptText="Pesquisa" HBox.hgrow="ALWAYS" />
+                               </children>
+                            </HBox>
+                        </items>
+                     </ToolBar>
+                     <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" HBox.hgrow="NEVER">
+                        <items>
+                            <Button fx:id="deleteFornecedorButton" mnemonicParsing="false">
+                                <graphic>
+                                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                                       <image>
+                                           <Image url="@/icons/ic_delete.png" />
+                                       </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </items>
+                     </ToolBar>
+                 </children>
+              </HBox>
+          </children>
+       </VBox>
+       <VBox>
+          <children>
+              <TabPane minHeight="225.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                 <tabs>
+                     <Tab text="Informações Gerais">
+                        <content>
+                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
+                               <content>
+                                   <VBox>
+                                      <children>
+                                          <HBox>
+                                             <children>
+                                                 <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0" text="Fornecedor">
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="nameFornecedorTextField" HBox.hgrow="ALWAYS">
+                                                            <HBox.margin>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                 </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox>
+                                             <children>
+                                                 <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0" text="CNPJ">
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="cnpjFornecedorTextField" HBox.hgrow="ALWAYS">
+                                                            <HBox.margin>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                 </HBox>
+                                          <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0" text="e-mail">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="emailFornecedorTextField" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                             </children>
+                                          </HBox>
+                                      </children>
+                                   </VBox>
+                               </content>
+                            </ScrollPane>
+                        </content>
+                     </Tab>
+                     <Tab text="Dados Bancários">
+                        <content>
+                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
+                               <content>
+                                   <VBox>
+                                      <children>
+                                          <HBox>
+                                             <children>
+                                                 <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0" text="Banco">
+                                                     <HBox.margin>
+                                                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                                     </HBox.margin>
+                                                 </Label>
+                                                 <ComboBox fx:id="bankAccountFornecedorComboBox" maxWidth="Infinity" prefHeight="25.0" prefWidth="2147483647" HBox.hgrow="ALWAYS">
+                                                     <HBox.margin>
+                                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                     </HBox.margin>
+                                                 </ComboBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox>
+                                             <children>
+                                                 <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0" text="Agência">
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="agencyAccountFornecedorTextField" HBox.hgrow="ALWAYS">
+                                                            <HBox.margin>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                 </HBox>
+                                                 <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0" text="Conta">
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="numberAccountFornecedorTextField" HBox.hgrow="ALWAYS">
+                                                            <HBox.margin>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </HBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                 </HBox>
+                                             </children>
+                                          </HBox>
+                                      </children>
+                                   </VBox>
+                               </content>
+                            </ScrollPane>
+                        </content>
+                     </Tab>
+                 </tabs>
+              </TabPane>
+          </children>
+       </VBox>
+   </items>
+</SplitPane>

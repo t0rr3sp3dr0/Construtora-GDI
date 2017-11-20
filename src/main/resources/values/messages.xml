@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="app_name">BuildWare</entry>
+    <entry key="developer_name">Singularity Systems</entry>
+    <entry key="app_version">0.0.1a</entry>
+    <entry key="instance_licensedTo">No One</entry>
+    <entry key="minWidth">640</entry>
+    <entry key="prefWidth">800</entry>
+    <entry key="maxWidth">Infinity</entry>
+    <entry key="minHeight">480</entry>
+    <entry key="prefHeight">600</entry>
+    <entry key="maxHeight">Infinity</entry>
+
+    <entry key="fornecedoresCadastro">Cadastro de Fornecedores</entry>
+    <entry key="trabalhadoresCadastro">Cadastro de Trabalhadores</entry>
+    <entry key="materiaisCadastro">Cadastro de Materiais</entry>
+    <entry key="clientesCadastro">Cadastro de Clientes</entry>
+    <entry key="obrasCadastro">Cadastro de Obras</entry>
+    <entry key="recolhimentoCadastro">Cadastro de Recolhimentos</entry>
+    <entry key="corretoresCadastro">Cadastro de Corretores</entry>
+    <entry key="imobiliariasCadastro">Cadastro de Imobiliárias</entry>
+    <entry key="imoveisCadastro">Cadastro de Imóveis</entry>
+    <entry key="prestadoresServicoCadastro">Cadastro de Prestadores de Serviço</entry>
+    <entry key="entradaEstoque">Entrada de Estoque</entry>
+    <entry key="saidaEstoque">Saida de Estoque</entry>
+    <entry key="fgtsRecolhimento">Recolhimento de FGTS</entry>
+    <entry key="inssRecolhimento">Recolhimento de INSS</entry>
+    <entry key="irrfRecolhimento">Recolhimento de IRRF</entry>
+    <entry key="folhaPagamento">Folha de Pagamento</entry>
+    <entry key="tributosPagamento">Pagamento de Tributos</entry>
+    <entry key="diversosPagamento">Pagamentos Diversos</entry>
+    <entry key="entradaCapitalFluxo">Entrada de Capital</entry>
+    <entry key="saidaCapitalFluxo">Saida de Capital</entry>
+    <entry key="pagarContasFluxo">Contas à Pagar</entry>
+    <entry key="receberContasFluxo">Contas à Receber</entry>
+    <entry key="dispesasFixasFluxo">Dispesas Fixas</entry>
+    <entry key="connectionPreferences">Connection Preferences</entry>
+</properties>

@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.5" orientation="VERTICAL" prefHeight="910.0"
+           prefWidth="708.0" xmlns="http://javafx.com/javafx/8"
+           fx:controller="systems.singularity.buildware.gui.TrabalhadoresCadastroController">
+    <VBox>
+        <TableView fx:id="trabalhadoresTableView" minHeight="120.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="trabalhadorTableColumn" minWidth="256.0" prefWidth="256.0"
+                             text="Trabalhador"/>
+                <TableColumn fx:id="cpfTrabalhadorTableColumn" minWidth="128.0" prefWidth="128.0" text="CPF"/>
+                <TableColumn fx:id="phoneNumberTrabalhadorTableColumn" minWidth="128.0" prefWidth="128.0"
+                             text="Telefone"/>
+                <TableColumn fx:id="emailTrabalhadorTableColumn" minWidth="192.0" prefWidth="192.0"
+                             text="e-mail"/>
+            </columns>
+        </TableView>
+        <HBox>
+            <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" HBox.hgrow="NEVER">
+                <Button fx:id="addTrabalhadorButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_add.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="editTrabalhadorButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_edit.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="saveTrabalhadorButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_save.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" HBox.hgrow="ALWAYS">
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                        <Image url="@/icons/ic_search.png"/>
+                    </ImageView>
+                    <TextField fx:id="searchTrabalhadorTextField" promptText="Pesquisa"
+                               HBox.hgrow="ALWAYS"/>
+                </HBox>
+            </ToolBar>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" HBox.hgrow="NEVER">
+                <Button fx:id="deleteTrabalhadorButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_delete.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </ToolBar>
+        </HBox>
+    </VBox>
+    <VBox>
+        <TabPane minHeight="225.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <Tab text="Informações Gerais">
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER"
+                                minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                        <VBox minWidth="0.0" prefWidth="0.0">
+                            <HBox minWidth="0.0" prefWidth="0.0">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Nome">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="nameTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Apelido">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="nicknameTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0"
+                                       text="Nascimento">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <DatePicker fx:id="birthdateTrabalhadorDatePicker"
+                                            maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </DatePicker>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0">
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0"
+                                       text="Naturalidade">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="birthplaceTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox layoutX="10.0" layoutY="121.0" minWidth="0.0"
+                                  prefWidth="0.0">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0"
+                                       text="Estado Civil">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <ComboBox fx:id="maritalStatusTrabalhadorComboBox"
+                                          maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </ComboBox>
+                            </HBox>
+                            <HBox layoutX="10.0" layoutY="47.0" minWidth="0.0"
+                                  prefWidth="0.0">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0"
+                                       text="Escolaridade">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <ComboBox fx:id="educationalLevelTrabalhadorComboBox"
+                                          maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </ComboBox>
+                            </HBox>
+                            <HBox layoutX="10.0" layoutY="84.0" minWidth="0.0"
+                                  prefWidth="0.0">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Raça">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <ComboBox fx:id="raceTrabalhadorComboBox"
+                                          maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </ComboBox>
+                            </HBox>
+                            <HBox layoutX="10.0" layoutY="10.0" minWidth="0.0"
+                                  prefWidth="0.0">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Sexo">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <ComboBox fx:id="genderTrabalhadorComboBox"
+                                          maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </ComboBox>
+                            </HBox>
+                        </VBox>
+                    </ScrollPane>
+                    <VBox alignment="CENTER" minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="trabalhadorImageView" fitHeight="200.0"
+                                   fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@/images/personPlaceholder.png"/>
+                        </ImageView>
+                    </VBox>
+                </HBox>
+            </Tab>
+            <Tab text="Informações Pessoais">
+                <ScrollPane fitToHeight="true" fitToWidth="true">
+                    <VBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="CPF">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="cpfTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="RG"
+                                       textAlignment="RIGHT">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="rgTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="84.0">
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </HBox>
+                        </HBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Telefone">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="phoneNumberTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="e-mail">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="emailTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </HBox>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="47.0">
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Endereço">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="streetTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0"
+                                       text="Complemento">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="complementTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Bairro">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="neighborhoodTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Cidade">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="cityTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="158.0">
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Estado">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="stateTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="CEP">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="zipCodeTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="195.0">
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </HBox>
+                        </HBox>
+                        <HBox minWidth="0.0" prefWidth="0.0">
+                            <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0"
+                                   prefWidth="96.0" text="Mãe">
+                                <HBox.margin>
+                                    <Insets bottom="10.0" left="5.0" right="5.0"
+                                            top="10.0"/>
+                                </HBox.margin>
+                            </Label>
+                            <TextField fx:id="motherNameTrabalhadorTextField"
+                                       HBox.hgrow="ALWAYS">
+                                <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                </HBox.margin>
+                            </TextField>
+                        </HBox>
+                        <HBox minWidth="0.0" prefWidth="0.0">
+                            <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0"
+                                   prefWidth="96.0" text="Pai">
+                                <HBox.margin>
+                                    <Insets bottom="10.0" left="5.0" right="5.0"
+                                            top="10.0"/>
+                                </HBox.margin>
+                            </Label>
+                            <TextField fx:id="fatherNameTrabalhadorTextField"
+                                       HBox.hgrow="ALWAYS">
+                                <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                </HBox.margin>
+                            </TextField>
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+            <Tab text="Informações Trabalhistas">
+                <ScrollPane fitToHeight="true" fitToWidth="true">
+                    <VBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0"
+                                       text="PIS/PASEP">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="nisTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="CTPS">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="ctpsTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </HBox>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="47.0">
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Cargo">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <ComboBox fx:id="cboTrabalhadorComboBox"
+                                          maxWidth="Infinity" prefHeight="25.0"
+                                          prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </ComboBox>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Salário">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="salaryTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="121.0">
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Admissão">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <DatePicker fx:id="hiringDateTrabalhadorDatePicker"
+                                            maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </DatePicker>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Demissão">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <DatePicker fx:id="terminationDateTrabalhadorDatePicker"
+                                            maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </DatePicker>
+                            </HBox>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="84.0">
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Situação">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <ComboBox fx:id="situationTrabalhadorComboBox"
+                                          maxWidth="Infinity" prefHeight="25.0"
+                                          prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </ComboBox>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+            <Tab text="Dados Bancários">
+                <ScrollPane fitToHeight="true" fitToWidth="true">
+                    <VBox>
+                        <HBox>
+                            <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0"
+                                   prefWidth="96.0" text="Banco">
+                                <HBox.margin>
+                                    <Insets bottom="10.0" left="5.0" right="5.0"
+                                            top="10.0"/>
+                                </HBox.margin>
+                            </Label>
+                            <ComboBox fx:id="bankAccountTrabalhadorComboBox"
+                                      maxWidth="Infinity" prefHeight="25.0"
+                                      prefWidth="2147483647">
+                                <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                </HBox.margin>
+                            </ComboBox>
+                        </HBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Agência">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="agencyAccountTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Conta">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="numberAccountTrabalhadorTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+            <Tab text="Dependentes">
+                <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0"
+                            prefWidth="200.0">
+                    <VBox>
+                        <HBox>
+                            <TableView fx:id="dependentesTrabalhadorTableView"
+                                       minHeight="80.0" prefHeight="120.0"
+                                       HBox.hgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="dependentesTrabalhadorTableColumn"
+                                                 minWidth="256.0" prefWidth="256.0"
+                                                 text="Nome"/>
+                                    <TableColumn
+                                            fx:id="birthdateDependentesTrabalhadorTableColumn"
+                                            minWidth="128.0" prefWidth="128.0"
+                                            text="Nascimento"/>
+                                    <TableColumn
+                                            fx:id="relationshipDependentesTrabalhadorTableColumn"
+                                            minWidth="192.0" prefWidth="192.0"
+                                            text="Parentesco"/>
+                                </columns>
+                            </TableView>
+                        </HBox>
+                        <HBox>
+                            <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0"
+                                     HBox.hgrow="ALWAYS">
+                                <Button fx:id="addDependentesTrabalhadorButton"
+                                        mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                                            <Image url="@/icons/ic_add.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="editDependentesTrabalhadorButton"
+                                        mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                                            <Image url="@/icons/ic_edit.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="saveDependentesTrabalhadorButton"
+                                        mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                                            <Image url="@/icons/ic_save.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </ToolBar>
+                            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0"
+                                     HBox.hgrow="ALWAYS">
+                                <Button fx:id="deleteDependentesTrabalhadorButton"
+                                        mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                                            <Image url="@/icons/ic_delete.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </ToolBar>
+                        </HBox>
+                        <HBox>
+                            <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0"
+                                   prefWidth="96.0" text="Nome">
+                                <HBox.margin>
+                                    <Insets bottom="10.0" left="5.0" right="5.0"
+                                            top="10.0"/>
+                                </HBox.margin>
+                            </Label>
+                            <TextField fx:id="nameDependentesTrabalhadorTextField"
+                                       HBox.hgrow="ALWAYS">
+                                <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                </HBox.margin>
+                            </TextField>
+                        </HBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0"
+                                       text="Nascimento">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <DatePicker
+                                        fx:id="birthdateDependentesTrabalhadorDatePicker"
+                                        maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </DatePicker>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0"
+                                       text="Parentesco">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <ComboBox
+                                        fx:id="relationshipDependentesTrabalhadorComboBox"
+                                        maxWidth="Infinity" prefWidth="2147483647">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </ComboBox>
+                            </HBox>
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+        </TabPane>
+    </VBox>
+</SplitPane>

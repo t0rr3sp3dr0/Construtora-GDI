@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - buildware@mysql23.redehost.com.br" uuid="9680c39d-368b-4b15-89bc-285f1eb0468a">
+    <database-info product="MySQL" version="5.6.28-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="buildware">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <table id="3" parent="1" name="bw_cargos"/>
+      <table id="4" parent="1" name="bw_clientes"/>
+      <table id="5" parent="1" name="bw_compras"/>
+      <table id="6" parent="1" name="bw_corretores"/>
+      <table id="7" parent="1" name="bw_destinos"/>
+      <table id="8" parent="1" name="bw_fgts"/>
+      <table id="9" parent="1" name="bw_folhaPagamento"/>
+      <table id="10" parent="1" name="bw_fornecedores"/>
+      <table id="11" parent="1" name="bw_fornecedores_contas"/>
+      <table id="12" parent="1" name="bw_fornecedores_contatos"/>
+      <table id="13" parent="1" name="bw_imobiliarias"/>
+      <table id="14" parent="1" name="bw_imobiliarias_contatos"/>
+      <table id="15" parent="1" name="bw_imoveis"/>
+      <table id="16" parent="1" name="bw_inss"/>
+      <table id="17" parent="1" name="bw_irrf"/>
+      <table id="18" parent="1" name="bw_materiais"/>
+      <table id="19" parent="1" name="bw_obras"/>
+      <table id="20" parent="1" name="bw_prestadoresServico"/>
+      <table id="21" parent="1" name="bw_saidaEstoque"/>
+      <table id="22" parent="1" name="bw_trabalhadores"/>
+      <table id="23" parent="1" name="bw_users"/>
+      <table id="24" parent="1" name="bw"/>
+      <table id="25" parent="1" name="bw_contasPagar"/>
+      <table id="26" parent="1" name="bw_contasReceber"/>
+      <table id="27" parent="1" name="bw_despesasFixas"/>
+      <table id="28" parent="1" name="bw_entradaCapital"/>
+      <table id="29" parent="1" name="bw_pagamentosDiversos"/>
+      <table id="30" parent="1" name="bw_saidaCapital"/>
+      <table id="31" parent="1" name="bw_trabalhadores_dependentes"/>
+      <table id="32" parent="1" name="bw_tributos"/>
+      <column id="33" parent="3" name="cargo_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <index id="34" parent="3" name="cargo_id">
+        <columns>cargo_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="35" parent="3" name="PRIMARY">
+        <columns>cargo_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="36" parent="3" name="cargo_id">
+        <columns>cargo_id</columns>
+        <underlying-index>cargo_id</underlying-index>
+      </key>
+      <column id="37" parent="4" name="cliente_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="38" parent="4" name="cliente_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="39" parent="4" name="cliente_job">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="40" parent="4" name="cliente_civilStatus">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="41" parent="4" name="cliente_birthday">
+        <data-type>date|0</data-type>
+      </column>
+      <column id="42" parent="4" name="cliente_birthplace">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="43" parent="4" name="cliente_rg">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="44" parent="4" name="cliente_cpf">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="45" parent="4" name="cliente_phoneNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="46" parent="4" name="cliente_emailAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="47" parent="4" name="cliente_neighborhoodAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="48" parent="4" name="cliente_streetAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="49" parent="4" name="cliente_complementAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="50" parent="4" name="cliente_cityAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="51" parent="4" name="cliente_ufAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)|0</data-type>
+      </column>
+      <column id="52" parent="4" name="cliente_bankAccount">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="53" parent="4" name="cliente_zipCodeAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="54" parent="4" name="cliente_agencyAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="55" parent="4" name="cliente_numberAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="56" parent="4" name="cliente_cAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <index id="57" parent="4" name="cliente_id">
+        <columns>cliente_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="58" parent="4" name="PRIMARY">
+        <columns>cliente_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="59" parent="4" name="cliente_id">
+        <columns>cliente_id</columns>
+        <underlying-index>cliente_id</underlying-index>
+      </key>
+      <column id="60" parent="5" name="compra_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="61" parent="5" name="compra_material_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="62" parent="5" name="compra_fornecedor_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="63" parent="5" name="compra_destino_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="64" parent="5" name="compra_etapa_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="65" parent="5" name="compra_quantity">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="66" parent="5" name="compra_unit_price">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="67" parent="5" name="compra_increase">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="68" parent="5" name="compra_discount">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="69" parent="5" name="compra_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="70" parent="5" name="compra_price">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <index id="71" parent="5" name="compra_id">
+        <columns>compra_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="72" parent="5" name="PRIMARY">
+        <columns>compra_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="73" parent="5" name="compra_id">
+        <columns>compra_id</columns>
+        <underlying-index>compra_id</underlying-index>
+      </key>
+      <column id="74" parent="6" name="corretor_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="75" parent="6" name="corretor_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="76" parent="6" name="corretor_imobiliaria_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="77" parent="6" name="corretor_creci">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="78" parent="6" name="corretor_birthday">
+        <data-type>date|0</data-type>
+      </column>
+      <column id="79" parent="6" name="corretor_birthplace">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="80" parent="6" name="corretor_cpf">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="81" parent="6" name="corretor_rg">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="82" parent="6" name="corretor_phoneNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="83" parent="6" name="corretor_emailAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="84" parent="6" name="corretor_streetAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="85" parent="6" name="corretor_neighborhoodAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="86" parent="6" name="corretor_complementAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="87" parent="6" name="corretor_cityAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="88" parent="6" name="corretor_ufAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)|0</data-type>
+      </column>
+      <column id="89" parent="6" name="corretor_zipCodeAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="90" parent="6" name="corretor_bankAccount">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="91" parent="6" name="corretor_agencyAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="92" parent="6" name="corretor_numberAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="93" parent="6" name="corretor_cAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <index id="94" parent="6" name="corretor_id">
+        <columns>corretor_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="95" parent="6" name="PRIMARY">
+        <columns>corretor_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="96" parent="6" name="corretor_id">
+        <columns>corretor_id</columns>
+        <underlying-index>corretor_id</underlying-index>
+      </key>
+      <column id="97" parent="7" name="destino_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <index id="98" parent="7" name="destino_id">
+        <columns>destino_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="99" parent="7" name="PRIMARY">
+        <columns>destino_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="100" parent="7" name="destino_id">
+        <columns>destino_id</columns>
+        <underlying-index>destino_id</underlying-index>
+      </key>
+      <column id="101" parent="8" name="fgts_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="102" parent="8" name="fgts_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="103" parent="8" name="fgts_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="104" parent="8" name="fgts_obra_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="105" parent="8" name="fgts_penalty">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="106" parent="8" name="fgts_interest">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="107" parent="8" name="fgts_competence">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="108" parent="8" name="fgts_total">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="109" parent="8" name="PRIMARY">
+        <columns>fgts_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="110" parent="9" name="folha_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="111" parent="9" name="folha_obra_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="112" parent="9" name="folha_trabalhador_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="113" parent="9" name="folha_salario">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="114" parent="9" name="folha_horasExtra">
+        <mandatory>1</mandatory>
+        <data-type>int(3)|0</data-type>
+      </column>
+      <column id="115" parent="9" name="folha_valorHora">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="116" parent="9" name="folha_gratificacao">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="117" parent="9" name="folha_salarioFamilia">
+        <mandatory>1</mandatory>
+        <data-type>int(3)|0</data-type>
+      </column>
+      <column id="118" parent="9" name="folha_familiaValor">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="119" parent="9" name="folha_adiantamento">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="120" parent="9" name="folha_inss">
+        <mandatory>1</mandatory>
+        <data-type>int(3)|0</data-type>
+      </column>
+      <column id="121" parent="9" name="folha_inssValor">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="122" parent="9" name="folha_irrf">
+        <mandatory>1</mandatory>
+        <data-type>int(3)|0</data-type>
+      </column>
+      <column id="123" parent="9" name="folha_irrfValor">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="124" parent="9" name="folha_faltas">
+        <mandatory>1</mandatory>
+        <data-type>int(3)|0</data-type>
+      </column>
+      <column id="125" parent="9" name="folha_descontoFalta">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="126" parent="9" name="folha_salarioLiquido">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="127" parent="9" name="PRIMARY">
+        <columns>folha_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="128" parent="10" name="fornecedor_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="129" parent="10" name="fornecedor_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="130" parent="10" name="fornecedor_c">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="131" parent="10" name="fornecedor_phoneNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="132" parent="10" name="fornecedor_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="133" parent="10" name="fornecedor_street">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="134" parent="10" name="fornecedor_complement">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="135" parent="10" name="fornecedor_neighborhood">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="136" parent="10" name="fornecedor_city">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="137" parent="10" name="fornecedor_zipCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="138" parent="10" name="fornecedor_ownerAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="139" parent="10" name="fornecedor_cAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="140" parent="10" name="fornecedor_bankAccount">
+        <data-type>varchar(3)|0</data-type>
+      </column>
+      <column id="141" parent="10" name="fornecedor_agencyAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(12)|0</data-type>
+      </column>
+      <column id="142" parent="10" name="fornecedor_numberAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(16)|0</data-type>
+      </column>
+      <column id="143" parent="10" name="fornecedor_ufAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="144" parent="10" name="fornecedor_ie">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <index id="145" parent="10" name="fornecedores_id">
+        <columns>fornecedor_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="146" parent="10" name="fornecedor_c">
+        <columns>fornecedor_c</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="147" parent="10" name="PRIMARY">
+        <columns>fornecedor_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="148" parent="10" name="fornecedores_id">
+        <columns>fornecedor_id</columns>
+        <underlying-index>fornecedores_id</underlying-index>
+      </key>
+      <key id="149" parent="10" name="fornecedor_c">
+        <columns>fornecedor_c</columns>
+        <underlying-index>fornecedor_c</underlying-index>
+      </key>
+      <column id="150" parent="11" name="conta_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="151" parent="11" name="conta_fornecedor_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="152" parent="11" name="conta_titular">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="153" parent="11" name="conta_titular_c">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="154" parent="11" name="conta_bank">
+        <mandatory>1</mandatory>
+        <data-type>varchar(3)|0</data-type>
+      </column>
+      <column id="155" parent="11" name="conta_agency">
+        <mandatory>1</mandatory>
+        <data-type>varchar(12)|0</data-type>
+      </column>
+      <column id="156" parent="11" name="conta_number">
+        <mandatory>1</mandatory>
+        <data-type>varchar(16)|0</data-type>
+      </column>
+      <column id="157" parent="12" name="contato_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="158" parent="12" name="contato_fornecedor_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="159" parent="12" name="contato_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="160" parent="12" name="contato_phoneNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="161" parent="12" name="contato_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="162" parent="12" name="bw_fornecedores_contatos_bw_fornecedores_fornecedor_id_fk">
+        <columns>contato_fornecedor_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="163" parent="12" name="contato_id">
+        <columns>contato_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="164" parent="12" name="PRIMARY">
+        <columns>contato_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="165" parent="12" name="contato_id">
+        <columns>contato_id</columns>
+        <underlying-index>contato_id</underlying-index>
+      </key>
+      <foreign-key id="166" parent="12" name="bw_fornecedores_contatos_bw_fornecedores_fornecedor_id_fk">
+        <columns>contato_fornecedor_id</columns>
+        <ref-key>~.bw_fornecedores.fornecedores_id</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="167" parent="13" name="imobiliaria_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="168" parent="13" name="imobiliaria_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="169" parent="13" name="imobiliaria_creci">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="170" parent="13" name="imobiliaria_cnpj">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="171" parent="13" name="imobiliaria_phoneNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="172" parent="13" name="imobiliaria_street">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="173" parent="13" name="imobiliaria_neighborhood">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="174" parent="13" name="imobiliaria_complement">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="175" parent="13" name="imobiliaria_city">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="176" parent="13" name="imobiliaria_ufAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="177" parent="13" name="imobiliaria_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="178" parent="13" name="imobiliaria_zipCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="179" parent="13" name="imobiliaria_bankAccount">
+        <data-type>varchar(3)|0</data-type>
+      </column>
+      <column id="180" parent="13" name="imobiliaria_agencyAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(12)|0</data-type>
+      </column>
+      <column id="181" parent="13" name="imobiliaria_numberAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(16)|0</data-type>
+      </column>
+      <column id="182" parent="13" name="imobiliaria_cAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <index id="183" parent="13" name="imobiliaria_id">
+        <columns>imobiliaria_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="184" parent="13" name="PRIMARY">
+        <columns>imobiliaria_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="185" parent="13" name="imobiliaria_id">
+        <columns>imobiliaria_id</columns>
+        <underlying-index>imobiliaria_id</underlying-index>
+      </key>
+      <column id="186" parent="14" name="contato_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="187" parent="14" name="contato_imobiliaria_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="188" parent="14" name="contato_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="189" parent="14" name="contato_phoneNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="190" parent="14" name="contato_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="191" parent="14" name="PRIMARY">
+        <columns>contato_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="192" parent="15" name="imovel_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="193" parent="15" name="imovel_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="194" parent="15" name="imovel_street">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="195" parent="15" name="imovel_complement">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="196" parent="15" name="imovel_neighborhood">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="197" parent="15" name="imovel_city">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="198" parent="15" name="imovel_ufAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="199" parent="15" name="imovel_cartorio">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="200" parent="15" name="imovel_zipCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="201" parent="15" name="imovel_matricula">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="202" parent="15" name="imovel_livro">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="203" parent="15" name="imovel_folhas">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="204" parent="15" name="imovel_description">
+        <data-type>longtext|0</data-type>
+      </column>
+      <index id="205" parent="15" name="imovel_id">
+        <columns>imovel_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="206" parent="15" name="PRIMARY">
+        <columns>imovel_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="207" parent="15" name="imovel_id">
+        <columns>imovel_id</columns>
+        <underlying-index>imovel_id</underlying-index>
+      </key>
+      <column id="208" parent="16" name="inss_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="209" parent="16" name="inss_obra_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="210" parent="16" name="inss_codigo_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="211" parent="16" name="inss_competence">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="212" parent="16" name="inss_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="213" parent="16" name="inss_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="214" parent="16" name="inss_penalty">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="215" parent="16" name="inss_interest">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="216" parent="16" name="inss_total">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="217" parent="16" name="PRIMARY">
+        <columns>inss_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="218" parent="17" name="irrf_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="219" parent="17" name="irrf_obra_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="220" parent="17" name="irrf_period">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="221" parent="17" name="irrf_codigo_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="222" parent="17" name="irrf_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="223" parent="17" name="irrf_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="224" parent="17" name="irrf_penalty">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="225" parent="17" name="irrf_interest">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="226" parent="17" name="irrf_total">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="227" parent="17" name="PRIMARY">
+        <columns>irrf_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="228" parent="18" name="material_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="229" parent="18" name="material_nome">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="230" parent="18" name="material_marca">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="231" parent="18" name="material_medida">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="232" parent="18" name="material_id">
+        <columns>material_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="233" parent="18" name="material_id_2">
+        <columns>material_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="234" parent="18" name="PRIMARY">
+        <columns>material_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="235" parent="18" name="material_id_2">
+        <columns>material_id</columns>
+        <underlying-index>material_id_2</underlying-index>
+      </key>
+      <column id="236" parent="19" name="obra_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="237" parent="19" name="obra_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="238" parent="19" name="obra_cei">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="239" parent="19" name="obra_streetAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="240" parent="19" name="obra_complementAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="241" parent="19" name="obra_neighborhoodAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="242" parent="19" name="obra_cityAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="243" parent="19" name="obra_ufAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)|0</data-type>
+      </column>
+      <column id="244" parent="19" name="obra_zipCodeAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(8)|0</data-type>
+      </column>
+      <column id="245" parent="19" name="obra_bankAccount">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="246" parent="19" name="obra_agencyAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="247" parent="19" name="obra_numberAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="248" parent="19" name="obra_id">
+        <columns>obra_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="249" parent="19" name="PRIMARY">
+        <columns>obra_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="250" parent="19" name="obra_id">
+        <columns>obra_id</columns>
+        <underlying-index>obra_id</underlying-index>
+      </key>
+      <column id="251" parent="20" name="prestador_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="252" parent="20" name="prestador_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="253" parent="20" name="prestador_c">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="254" parent="20" name="prestador_phoneNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="255" parent="20" name="prestador_street">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="256" parent="20" name="prestador_neighborhood">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="257" parent="20" name="prestador_complement">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="258" parent="20" name="prestador_city">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="259" parent="20" name="prestador_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="260" parent="20" name="prestador_zipCode">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="261" parent="20" name="prestador_ownerAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="262" parent="20" name="prestador_bankAccount">
+        <data-type>varchar(3)|0</data-type>
+      </column>
+      <column id="263" parent="20" name="prestador_agencyAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(12)|0</data-type>
+      </column>
+      <column id="264" parent="20" name="prestador_numberAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(16)|0</data-type>
+      </column>
+      <column id="265" parent="20" name="prestador_ufAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="266" parent="20" name="prestador_service">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="267" parent="20" name="prestador_cAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <index id="268" parent="20" name="prestador_id">
+        <columns>prestador_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="269" parent="20" name="PRIMARY">
+        <columns>prestador_id
+prestador_agencyAccount</columns>
+        <primary>1</primary>
+      </key>
+      <key id="270" parent="20" name="prestador_id">
+        <columns>prestador_id</columns>
+        <underlying-index>prestador_id</underlying-index>
+      </key>
+      <column id="271" parent="21" name="saida_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="272" parent="21" name="saida_material_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="273" parent="21" name="saida_destino_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="274" parent="21" name="saida_quantity">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="275" parent="21" name="saida_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <key id="276" parent="21" name="PRIMARY">
+        <columns>saida_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="277" parent="22" name="trabalhador_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="278" parent="22" name="trabalhador_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="279" parent="22" name="trabalhador_nickname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="280" parent="22" name="trabalhador_birthdate">
+        <data-type>date|0</data-type>
+      </column>
+      <column id="281" parent="22" name="trabalhador_birthplace">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="282" parent="22" name="trabalhador_civilStatus">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="283" parent="22" name="trabalhador_scholarity">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="284" parent="22" name="trabalhador_breed">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="285" parent="22" name="trabalhador_sex">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="286" parent="22" name="trabalhador_picture">
+        <mandatory>1</mandatory>
+        <data-type>mediumblob|0</data-type>
+      </column>
+      <column id="287" parent="22" name="trabalhador_cpf">
+        <mandatory>1</mandatory>
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="288" parent="22" name="trabalhador_rg">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="289" parent="22" name="trabalhador_phoneNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="290" parent="22" name="trabalhador_emailAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="291" parent="22" name="trabalhador_streetAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="292" parent="22" name="trabalhador_complementAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)|0</data-type>
+      </column>
+      <column id="293" parent="22" name="trabalhador_neighborhoodAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="294" parent="22" name="trabalhador_cityAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="295" parent="22" name="trabalhador_ufAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)|0</data-type>
+      </column>
+      <column id="296" parent="22" name="trabalhador_zipCodeAddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="297" parent="22" name="trabalhador_motherName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="298" parent="22" name="trabalhador_fatherName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="299" parent="22" name="trabalhador_nis">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="300" parent="22" name="trabalhador_ctps">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="301" parent="22" name="trabalhador_cbo">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="302" parent="22" name="trabalhador_hiringDate">
+        <data-type>date|0</data-type>
+      </column>
+      <column id="303" parent="22" name="trabalhador_terminationDate">
+        <data-type>date|0</data-type>
+      </column>
+      <column id="304" parent="22" name="trabalhador_salary">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="305" parent="22" name="trabalhador_situation_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="306" parent="22" name="trabalhador_bankAccount">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="307" parent="22" name="trabalhador_agencyAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="308" parent="22" name="trabalhador_numberAccount">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="309" parent="22" name="trabalhadores_id">
+        <columns>trabalhador_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="310" parent="22" name="PRIMARY">
+        <columns>trabalhador_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="311" parent="22" name="trabalhadores_id">
+        <columns>trabalhador_id</columns>
+        <underlying-index>trabalhadores_id</underlying-index>
+      </key>
+      <column id="312" parent="23" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="313" parent="23" name="user_login">
+        <mandatory>1</mandatory>
+        <data-type>varchar(16)|0</data-type>
+      </column>
+      <column id="314" parent="23" name="user_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)|0</data-type>
+      </column>
+      <column id="315" parent="23" name="user_avatar">
+        <mandatory>1</mandatory>
+        <data-type>blob|0</data-type>
+      </column>
+      <index id="316" parent="23" name="user_id">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="317" parent="23" name="user_login">
+        <columns>user_login</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="318" parent="23" name="PRIMARY">
+        <columns>user_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="319" parent="23" name="user_id">
+        <columns>user_id</columns>
+        <underlying-index>user_id</underlying-index>
+      </key>
+      <key id="320" parent="23" name="user_login">
+        <columns>user_login</columns>
+        <underlying-index>user_login</underlying-index>
+      </key>
+      <column id="321" parent="24" name="bw_version">
+        <data-type>varchar(11)|0</data-type>
+      </column>
+      <column id="322" parent="24" name="bw_licenseNumber">
+        <data-type>varchar(40)|0</data-type>
+      </column>
+      <column id="323" parent="24" name="bw_branch">
+        <data-type>varchar(14)|0</data-type>
+      </column>
+      <column id="324" parent="24" name="bw_licensedTo">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="325" parent="25" name="pagar_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="326" parent="25" name="pagar_reference_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="327" parent="25" name="pagar_creditor">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="328" parent="25" name="pagar_description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="329" parent="25" name="pagar_plots">
+        <mandatory>1</mandatory>
+        <data-type>int(3)|0</data-type>
+      </column>
+      <column id="330" parent="25" name="pagar_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="331" parent="25" name="pagar_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="332" parent="25" name="PRIMARY">
+        <columns>pagar_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="333" parent="26" name="receber_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="334" parent="26" name="receber_reference_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="335" parent="26" name="receber_debtor_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="336" parent="26" name="receber_description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="337" parent="26" name="receber_plots">
+        <mandatory>1</mandatory>
+        <data-type>int(3)|0</data-type>
+      </column>
+      <column id="338" parent="26" name="receber_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="339" parent="26" name="receber_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="340" parent="26" name="PRIMARY">
+        <columns>receber_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="341" parent="27" name="despesa_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="342" parent="27" name="despesa_reference_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="343" parent="27" name="despesa_description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="344" parent="27" name="despesa_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="345" parent="27" name="despesa_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="346" parent="27" name="PRIMARY">
+        <columns>despesa_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="347" parent="28" name="entrada_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="348" parent="28" name="entrada_reference">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="349" parent="28" name="entrada_origin">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="350" parent="28" name="entrada_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="351" parent="28" name="entrada_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="352" parent="28" name="PRIMARY">
+        <columns>entrada_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="353" parent="29" name="pagamento_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="354" parent="29" name="pagamento_obra_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="355" parent="29" name="pagamento_competence">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="356" parent="29" name="pagamento_description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="357" parent="29" name="pagamento_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="358" parent="29" name="pagamento_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="359" parent="29" name="pagamento_penalty">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="360" parent="29" name="pagamento_interest">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="361" parent="29" name="pagamento_total">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="362" parent="29" name="PRIMARY">
+        <columns>pagamento_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="363" parent="30" name="saida_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="364" parent="30" name="saida_reference">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="365" parent="30" name="saida_destination">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="366" parent="30" name="saida_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="367" parent="30" name="saida_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <key id="368" parent="30" name="PRIMARY">
+        <columns>saida_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="369" parent="31" name="dependente_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="370" parent="31" name="dependente_trabalhador_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="371" parent="31" name="dependente_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="372" parent="31" name="dependente_birthday">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <key id="373" parent="31" name="PRIMARY">
+        <columns>dependente_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="374" parent="32" name="tributo_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="375" parent="32" name="tributo_obra_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="376" parent="32" name="tributo_competence">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="377" parent="32" name="tributo_date">
+        <mandatory>1</mandatory>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="378" parent="32" name="tributo_value">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="379" parent="32" name="tributo_penalty">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="380" parent="32" name="tributo_interest">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="381" parent="32" name="tributo_total">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10)|0</data-type>
+      </column>
+      <column id="382" parent="32" name="tributo_guia_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <key id="383" parent="32" name="PRIMARY">
+        <columns>tributo_id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

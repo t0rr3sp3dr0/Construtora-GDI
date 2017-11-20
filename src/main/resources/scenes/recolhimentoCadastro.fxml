@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.5" orientation="VERTICAL" prefHeight="910.0"
+           prefWidth="708.0" xmlns="http://javafx.com/javafx/8.0.71"
+           fx:controller="systems.singularity.buildware.gui.RecolhimentoCadastroController">
+    <VBox>
+        <TableView fx:id="obraTableView" minHeight="120.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="obraTableColumn" minWidth="256.0" prefWidth="347.0" text="Destino"/>
+                <TableColumn fx:id="ceiObraTableColumn" minWidth="128.0" prefWidth="358.0" text="Tipo"/>
+            </columns>
+        </TableView>
+        <HBox>
+            <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" HBox.hgrow="NEVER">
+                <Button fx:id="addObraButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_add.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="editObraButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_edit.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="saveObraButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_save.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" HBox.hgrow="ALWAYS">
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                        <Image url="@/icons/ic_search.png"/>
+                    </ImageView>
+                    <TextField fx:id="searchObraTextField" promptText="Pesquisa" HBox.hgrow="ALWAYS"/>
+                </HBox>
+            </ToolBar>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" HBox.hgrow="NEVER">
+                <Button fx:id="deleteObraButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_delete.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </ToolBar>
+        </HBox>
+    </VBox>
+    <VBox>
+        <TabPane minHeight="225.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <Tab text="Informações Gerais">
+                <ScrollPane fitToHeight="true" fitToWidth="true">
+                    <VBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Recolhimento">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="nameRecolhimentoTextField"
+                                           HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" maxWidth="96.0"
+                                       minWidth="96.0" prefWidth="96.0" text="Destino">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="destinoTextField" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" visible="false"
+                                  HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0"
+                                       text="Label">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                        <HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0"
+                                       text="Tipo">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="tipoTextField" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                            <HBox minWidth="0.0" prefWidth="0.0" visible="false"
+                                  HBox.hgrow="ALWAYS">
+                                <Label alignment="CENTER_RIGHT" prefWidth="96.0"
+                                       text="Label">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="5.0" right="5.0"
+                                                top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0"
+                                                top="5.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </HBox>
+                        </HBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+        </TabPane>
+    </VBox>
+</SplitPane>

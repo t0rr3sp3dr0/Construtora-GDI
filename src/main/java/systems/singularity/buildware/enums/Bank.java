@@ -1,0 +1,144 @@
+package systems.singularity.buildware.enums;
+
+/**
+ * Created by phts on 05/05/16.
+ * © 2016 Singularity Systems
+ */
+public enum Bank {
+    _null(null, null),
+    _001("001", "BANCO DO BRASIL S.A."),
+    _003("003", "BANCO DA AMAZONIA S.A."),
+    _004("004", "BANCO DO NORDESTE DO BRASIL S.A."),
+    _012("012", "BANCO STANDARD DE INVESTIMENTOS S.A."),
+    _014("014", "NATIXIS BRASIL S.A. BANCO MÚLTIPLO"),
+    _019("019", "BANCO AZTECA DO BRASIL S.A."),
+    _021("021", "BANESTES S.A. BANCO DO ESTADO DO ESPIRITO SANTO"),
+    _024("024", "BANCO DE PERNAMBUCO S.A. - BANDEPE"),
+    _025("025", "BANCO ALFA S.A."),
+    _029("029", "BANCO BANERJ S.A."),
+    _031("031", "BANCO BEG S.A."),
+    _033("033", "BANCO SANTANDER (BRASIL) S.A."),
+    _036("036", "BANCO BRADESCO BBI S.A."),
+    _037("037", "BANCO DO ESTADO DO PARÁ S.A."),
+    _040("040", "BANCO CARGILL S.A."),
+    _041("041", "BANCO DO ESTADO DO RIO GRANDE DO SUL S.A."),
+    _044("044", "BANCO BVA S.A."),
+    _045("045", "BANCO OPPORTUNITY S.A."),
+    _047("047", "BANCO DO ESTADO DE SERGIPE S.A."),
+    _062("062", "HIPERCARD BANCO MÚLTIPLO S.A."),
+    _063("063", "BANCO IBI S.A. - BANCO MÚLTIPLO"),
+    _065("065", "BANCO LEMON S.A."),
+    _066("066", "BANCO MORGAN STANLEY S.A."),
+    _069("069", "BPN BRASIL BANCO MÚLTIPLO S.A."),
+    _070("070", "BRB - BANCO DE BRASILIA S.A."),
+    _072("072", "BANCO RURAL MAIS S.A."),
+    _073("073", "BB BANCO POPULAR DO BRASIL S.A."),
+    _074("074", "BANCO J. SAFRA S.A."),
+    _075("075", "BANCO CR2 S/A"),
+    _076("076", "BANCO KDB DO BRASIL S.A."),
+    _077("077", "BANCO INTERMEDIUM S/A"),
+    _078("078", "BES INVESTIMENTO DO BRASIL S.A. - BANCO DE INVESTIMENTO"),
+    _079("079", "JBS BANCO S/A"),
+    _081("081", "CONCÓRDIA BANCO S.A."),
+    _082("082", "BANCO TOPÁZIO S.A."),
+    _083("083", "BANCO DA CHINA BRASIL S.A"),
+    _096("096", "BANCO BM&F DE SERVIÇOS DE LIQUIDAÇÃO E CUSTÓDIA S.A."),
+    _104("104", "CAIXA ECONOMICA FEDERAL"),
+    _107("107", "BANCO BBM S/A"),
+    _151("151", "BANCO NOSSA CAIXA S.A."),
+    _184("184", "BANCO ITAÚ BBA S.A."),
+    _204("204", "BANCO BRADESCO CARTÕES S.A."),
+    _208("208", "BANCO UBS PACTUAL S.A."),
+    _212("212", "BANCO MATONE S.A."),
+    _213("213", "BANCO ARBI S.A."),
+    _214("214", "BANCO DIBENS S.A."),
+    _215("215", "BANCO COMERCIAL E DE INVESTIMENTO SUDAMERIS S.A."),
+    _217("217", "BANCO JOHN DEERE S.A."),
+    _218("218", "BANCO BONSUCESSO S.A."),
+    _222("222", "BANCO CALYON BRASIL S.A."),
+    _224("224", "BANCO FIBRA S.A."),
+    _225("225", "BANCO BRASCAN S.A."),
+    _229("229", "BANCO CRUZEIRO DO SUL S.A."),
+    _230("230", "UNICARD BANCO MÚLTIPLO S.A."),
+    _233("233", "BANCO GE CAPITAL S.A."),
+    _237("237", "BANCO BRADESCO S.A."),
+    _241("241", "BANCO CLASSICO S.A."),
+    _243("243", "BANCO MÁXIMA S.A."),
+    _246("246", "BANCO ABC BRASIL S.A."),
+    _248("248", "BANCO BOAVISTA INTERATLANTICO S.A."),
+    _249("249", "BANCO INVESTCRED UNIBANCO S.A."),
+    _250("250", "BANCO SCHAHIN S.A."),
+    _254("254", "PARANÁ BANCO S.A."),
+    _263("263", "BANCO CACIQUE S.A."),
+    _265("265", "BANCO FATOR S.A."),
+    _266("266", "BANCO CEDULA S.A."),
+    _300("300", "BANCO DE LA NACION ARGENTINA"),
+    _318("318", "BANCO BMG S.A."),
+    _320("320", "BANCO INDUSTRIAL E COMERCIAL S.A."),
+    _341("341", "BANCO ITAÚ S.A."),
+    _366("366", "BANCO SOCIETE GENERALE BRASIL S.A."),
+    _370("370", "BANCO WESTLB DO BRASIL S.A."),
+    _376("376", "BANCO J.P. MORGAN S.A."),
+    _389("389", "BANCO MERCANTIL DO BRASIL S.A."),
+    _394("394", "BANCO FINASA BMC S.A."),
+    _399("399", "HSBC BANK BRASIL S.A. - BANCO MULTIPLO"),
+    _409("409", "UNIBANCO-UNIAO DE BANCOS BRASILEIROS S.A."),
+    _412("412", "BANCO CAPITAL S.A."),
+    _422("422", "BANCO SAFRA S.A."),
+    _453("453", "BANCO RURAL S.A."),
+    _456("456", "BANCO DE TOKYO-MITSUBISHI UFJ BRASIL S/A"),
+    _464("464", "BANCO SUMITOMO MITSUI BRASILEIRO S.A."),
+    _473("473", "BANCO CAIXA GERAL - BRASIL S.A."),
+    _477("477", "CITIBANK N.A."),
+    _479("479", "BANCO ITAUBANK S.A."),
+    _487("487", "DEUTSCHE BANK S.A. - BANCO ALEMAO"),
+    _488("488", "JPMORGAN CHASE BANK, NATIONAL ASSOCIATION"),
+    _492("492", "ING BANK N.V."),
+    _494("494", "BANCO DE LA REPUBLICA ORIENTAL DEL URUGUAY"),
+    _495("495", "BANCO DE LA PROVINCIA DE BUENOS AIRES"),
+    _505("505", "BANCO CREDIT SUISSE (BRASIL) S.A."),
+    _600("600", "BANCO LUSO BRASILEIRO S.A."),
+    _604("604", "BANCO INDUSTRIAL DO BRASIL S.A."),
+    _610("610", "BANCO VR S.A."),
+    _611("611", "BANCO PAULISTA S.A."),
+    _612("612", "BANCO GUANABARA S.A."),
+    _613("613", "BANCO PECUNIA S.A."),
+    _623("623", "BANCO PANAMERICANO S.A."),
+    _626("626", "BANCO FICSA S.A."),
+    _630("630", "BANCO INTERCAP S.A."),
+    _633("633", "BANCO RENDIMENTO S.A."),
+    _634("634", "BANCO TRIANGULO S.A."),
+    _637("637", "BANCO SOFISA S.A."),
+    _638("638", "BANCO PROSPER S.A."),
+    _641("641", "BANCO ALVORADA S.A."),
+    _643("643", "BANCO PINE S.A."),
+    _652("652", "ITAÚ UNIBANCO BANCO MÚLTIPLO S.A."),
+    _653("653", "BANCO INDUSVAL S.A."),
+    _654("654", "BANCO A.J. RENNER S.A."),
+    _655("655", "BANCO VOTORANTIM S.A."),
+    _707("707", "BANCO DAYCOVAL S.A."),
+    _719("719", "BANIF - BANCO INTERNACIONAL DO FUNCHAL (BRASIL), S.A."),
+    _721("721", "BANCO CREDIBEL S.A."),
+    _734("734", "BANCO GERDAU S.A");
+
+    private final String id;
+    private final String name;
+
+    Bank(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return this.equals(Bank._null) ? "" : String.format("%s - %s", getId(), getName());
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+}

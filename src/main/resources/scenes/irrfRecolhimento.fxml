@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.76" orientation="VERTICAL"
+           xmlns="http://javafx.com/javafx/8">
+    <VBox>
+        <TableView fx:id="comprasTableView" minHeight="120.0" prefHeight="413.0" prefWidth="706.0"
+                   VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="materialCompraTableColumn" minWidth="128.0" prefWidth="256.0"
+                             text="Identificador"/>
+                <TableColumn fx:id="quantidadeCompraTableColumn" minWidth="96.0" prefWidth="128.0"
+                             text="Competência"/>
+                <TableColumn fx:id="precoCompraTableColumn" minWidth="96.0" prefWidth="128.0" text="Valor"/>
+            </columns>
+        </TableView>
+        <HBox>
+            <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" HBox.hgrow="NEVER">
+                <Button fx:id="addCompraButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_add.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="editCompraButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_edit.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="saveCompraButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_save.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" HBox.hgrow="ALWAYS">
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <ImageView fitHeight="17.0" fitWidth="17.0">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                        <Image url="@/icons/ic_search.png"/>
+                    </ImageView>
+                    <TextField fx:id="searchCompraTextField" promptText="Pesquisa"
+                               HBox.hgrow="ALWAYS"/>
+                </HBox>
+            </ToolBar>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" HBox.hgrow="NEVER">
+                <Button fx:id="deleteComprasButton" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0">
+                            <Image url="@/icons/ic_delete.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </ToolBar>
+        </HBox>
+    </VBox>
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minHeight="225.0" prefHeight="200.0"
+                prefWidth="200.0">
+        <VBox>
+            <HBox layoutX="10.0" layoutY="47.0">
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0"
+                           text="Identificador">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                        </HBox.margin>
+                    </Label>
+                    <ComboBox fx:id="materialComprasComboBox" maxWidth="Infinity" prefHeight="25.0"
+                              prefWidth="2147483647">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                    </ComboBox>
+                </HBox>
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0"
+                           text="Periodo">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="quantidadeComprasTextField121" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                    </TextField>
+                </HBox>
+            </HBox>
+            <HBox>
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0"
+                           text="Código DARF">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                        </HBox.margin>
+                    </Label>
+                    <ComboBox fx:id="materialComprasComboBox1" maxWidth="Infinity" prefHeight="25.0"
+                              prefWidth="2147483647" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                    </ComboBox>
+                </HBox>
+                <HBox layoutX="10.0" layoutY="10.0" minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0"
+                           text="Data">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                        </HBox.margin>
+                    </Label>
+                    <DatePicker fx:id="dataComprasTextField1" maxWidth="Infinity" prefHeight="25.0"
+                                prefWidth="2147483647" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                    </DatePicker>
+                </HBox>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0">
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0"
+                           text="Valor">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="quantidadeComprasTextField" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                    </TextField>
+                </HBox>
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0"
+                           text="Multa">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="quantidadeComprasTextField1" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                    </TextField>
+                </HBox>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="84.0">
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0"
+                           text="Juros">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="quantidadeComprasTextField12" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                    </TextField>
+                </HBox>
+                <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0"
+                           text="Total">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="quantidadeComprasTextField122" HBox.hgrow="ALWAYS">
+                        <HBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </HBox.margin>
+                    </TextField>
+                </HBox>
+            </HBox>
+        </VBox>
+    </ScrollPane>
+</SplitPane>

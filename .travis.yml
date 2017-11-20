@@ -1,0 +1,30 @@
+language: java
+
+script: mvn clean verify
+
+# jdk:
+#   - oraclejdk8
+
+sudo: false
+
+os:
+  - linux
+  # - osx
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+
+before_install:
+  - remove_dir_from_path $JAVA_HOME/bin
+  - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+  - export PATH=$JAVA_HOME/bin:$PATH
+  - java -version
+
+notifications:
+  email:
+  - esvm@cin.ufpe.br
+  - lvrma@cin.ufpe.br
+  - phts@cin.ufpe.br
+  slack: singularitysystems:9IAuVcUkkLyEw7tO9DBpxeiS
