@@ -31,78 +31,8 @@
                      </Menu>
                      <Menu fx:id="cadastroMenu" mnemonicParsing="false" text="Cadastro">
                         <items>
-                            <MenuItem fx:id="fornecedoresCadastroMenuItem" mnemonicParsing="false" text="#Fornecedores" />
-                            <MenuItem fx:id="trabalhadoresCadastroMenuItem" mnemonicParsing="false" text="#Trabalhadores" />
-                            <MenuItem fx:id="obrasCadastroMenuItem" mnemonicParsing="false" text="#Obras" />
-                            <MenuItem fx:id="materiaisCadastroMenuItem" mnemonicParsing="false" text="#Materiais" />
-                            <MenuItem fx:id="prestadoresServicoCadastroMenuItem" mnemonicParsing="false" text="#Prestadores de Serviço" />
-                            <!--<MenuItem fx:id="destinosRecolhimentosCadastroMenuItem" mnemonicParsing="false"
-                                                  text="#Destinos e Recolhimentos"/>-->
-                            <MenuItem fx:id="corretoresCadastroMenuItem" mnemonicParsing="false" text="#Corretor" />
-                            <MenuItem fx:id="imobiliariasCadastroMenuItem" mnemonicParsing="false" text="#Imobiliária" />
-                            <MenuItem fx:id="imoveisCadastroMenuItem" mnemonicParsing="false" text="#Imóveis" />
                             <MenuItem fx:id="clientesCadastroMenuItem" mnemonicParsing="false" text="#Clientes" />
-                        </items>
-                     </Menu>
-                     <Menu fx:id="estoqueMenu" mnemonicParsing="false" text="Estoque">
-                        <items>
-                            <MenuItem fx:id="entradaEstoqueMenuItem" mnemonicParsing="false" text="#Entrada" />
-                            <MenuItem fx:id="saidaEstoqueMenuItem" mnemonicParsing="false" text="#Saida" />
-                        </items>
-                     </Menu>
-                     <Menu fx:id="caixaMenu" mnemonicParsing="false" text="Fluxo de Caixa">
-                        <items>
-                            <Menu fx:id="pagamentosMenu" mnemonicParsing="false" text="Pagamentos">
-                               <items>
-                                   <Menu fx:id="encargosTrabalhistasMenu" mnemonicParsing="false" text="Encargos Trabalhistas">
-                                      <items>
-                                          <MenuItem fx:id="fgtsRecolhimentoMenuItem" mnemonicParsing="false" text="#FGTS" />
-                                          <MenuItem fx:id="inssRecolhimentoMenuItem" mnemonicParsing="false" text="#INSS" />
-                                          <MenuItem fx:id="irrfRecolhimentoMenuItem" mnemonicParsing="false" text="#IRRF" />
-                                      </items>
-                                   </Menu>
-                                   <SeparatorMenuItem mnemonicParsing="false" />
-                                   <MenuItem fx:id="folhaPagamentoMenuItem" mnemonicParsing="false" text="#Folha de Pagamento" />
-                                   <MenuItem fx:id="tributosPagamentoMenuItem" mnemonicParsing="false" text="#Tributos" />
-                                   <MenuItem fx:id="diversosPagamentoMenuItem" mnemonicParsing="false" text="#Diversos" />
-                               </items>
-                            </Menu>
-                            <SeparatorMenuItem mnemonicParsing="false" />
-                            <MenuItem fx:id="entradaCapitalFluxoMenuItem" mnemonicParsing="false" text="#Entradas de Capital" />
-                            <MenuItem fx:id="saidaCapitalFluxoMenuItem" mnemonicParsing="false" text="#Saida de Capital" />
-                            <SeparatorMenuItem mnemonicParsing="false" />
-                            <MenuItem fx:id="receberContasFluxoMenuItem" mnemonicParsing="false" text="#Contas a Receber" />
-                            <MenuItem fx:id="pagarContasFluxoMenuItem" mnemonicParsing="false" text="#Contas a Pagar" />
-                            <SeparatorMenuItem mnemonicParsing="false" />
-                            <!--<MenuItem fx:id="capitalLiquidoCaixaMenuItem" mnemonicParsing="false" text="#Capital Líquido"/>-->
-                            <MenuItem fx:id="dispesasFixasFluxoMenuItem" mnemonicParsing="false" text="#Despesas Fixas" />
-                        </items>
-                         <!--<MenuItem fx:id="pesquisaValoresCaixaMenuItem" mnemonicParsing="false" text="#Pesquisa Valores"/>-->
-                     </Menu>
-                     <Menu fx:id="documentosMenu" mnemonicParsing="false" text="#Documentos">
-                        <items>
-                            <MenuItem fx:id="importarDocumentosMenuItem" mnemonicParsing="false" text="#Importar" />
-                            <MenuItem fx:id="gerarDocumentosMenuItem" mnemonicParsing="false" text="#Gerar" />
-                            <SeparatorMenuItem mnemonicParsing="false" />
-                            <MenuItem fx:id="reciboAvulsoDocumentosMenuItem" mnemonicParsing="false" text="#Recibo Avulso" />
-                            <SeparatorMenuItem mnemonicParsing="false" />
-                            <Menu fx:id="relatoriosMenu" mnemonicParsing="false" text="Relatórios">
-                               <items>
-                                   <MenuItem fx:id="estoqueRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Estoque" />
-                                   <MenuItem fx:id="despesasRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Despesas" />
-                                   <MenuItem fx:id="fornecedoresRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Fornecedores" />
-                                   <MenuItem fx:id="trabalhadoresRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Trabalhadores" />
-                                   <MenuItem fx:id="obrasRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Obras" />
-                                   <MenuItem fx:id="materiaisRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Materiais" />
-                                   <MenuItem fx:id="prestadoresServicoRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Prestadores de Serviço" />
-                                   <!--<MenuItem fx:id="destinosRecolhimentosRelatoriosDocumentosMenuItem" mnemonicParsing="false"
-                                                         text="#Destinos e Recolhimentos"/>-->
-                                   <MenuItem fx:id="corretoresRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Corretor" />
-                                   <MenuItem fx:id="imobiliariasRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Imobiliária" />
-                                   <MenuItem fx:id="imoveisRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Imóveis" />
-                                   <MenuItem fx:id="clientesRelatoriosDocumentosMenuItem" mnemonicParsing="false" text="#Clientes" />
-                               </items>
-                            </Menu>
+                            <MenuItem fx:id="fornecedoresCadastroMenuItem" mnemonicParsing="false" text="#Fornecedores" />
                         </items>
                      </Menu>
                  </menus>

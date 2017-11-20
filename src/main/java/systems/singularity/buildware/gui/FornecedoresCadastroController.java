@@ -19,6 +19,7 @@ import systems.singularity.buildware.util.StageTools;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
@@ -173,7 +174,10 @@ public class FornecedoresCadastroController implements Initializable {
     //<editor-fold desc="fornecedoresTableView">
 
     public void refresh(Provider select) {
-        Platform.runLater(() -> fornecedoresTableView.setDisable(true));
+        Platform.runLater(() -> {
+            fornecedoresTableView.setDisable(true);
+            fornecedoresTableView.setItems(FXCollections.observableList(Collections.emptyList()));
+        });
 
         new AsyncCallable(() -> {
             List<Provider> list = Repositories.provider.getAll().stream().map(provider -> {
