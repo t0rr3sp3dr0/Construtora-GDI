@@ -47,4 +47,19 @@ public class Phone {
         this.number = number;
         return this;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Phone)) return false;
+
+        Phone phone = (Phone) o;
+
+        return getId() == phone.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return getId();
+    }
 }

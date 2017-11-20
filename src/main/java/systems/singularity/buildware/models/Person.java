@@ -93,4 +93,19 @@ public class Person {
         this.address = address;
         return this;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+
+        Person person = (Person) o;
+
+        return getId() == person.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return getId();
+    }
 }

@@ -349,6 +349,94 @@
                             </ScrollPane>
                         </content>
                      </Tab>
+                  <Tab text="Contatos">
+                     <content>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <VBox>
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <TableView fx:id="contatosClienteTableView" minHeight="80.0" prefHeight="120.0" HBox.hgrow="ALWAYS">
+                                             <columns>
+                                                <TableColumn fx:id="phoneNumberClientesTableColumn" minWidth="192.0" prefWidth="192.0" text="Telefone" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" HBox.hgrow="ALWAYS">
+                                             <items>
+                                                <Button fx:id="addContatosClienteButton" mnemonicParsing="false">
+                                                   <graphic>
+                                                      <ImageView fitHeight="17.0" fitWidth="17.0">
+                                                         <image>
+                                                            <Image url="@/icons/ic_add.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="editContatosClienteButton" mnemonicParsing="false">
+                                                   <graphic>
+                                                      <ImageView fitHeight="17.0" fitWidth="17.0">
+                                                         <image>
+                                                            <Image url="@/icons/ic_edit.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="saveContatosClienteButton" mnemonicParsing="false">
+                                                   <graphic>
+                                                      <ImageView fitHeight="17.0" fitWidth="17.0">
+                                                         <image>
+                                                            <Image url="@/icons/ic_save.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </items>
+                                          </ToolBar>
+                                          <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" HBox.hgrow="ALWAYS">
+                                             <items>
+                                                <Button fx:id="deleteContatosClienteButton" mnemonicParsing="false">
+                                                   <graphic>
+                                                      <ImageView fitHeight="17.0" fitWidth="17.0">
+                                                         <image>
+                                                            <Image url="@/icons/ic_delete.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </items>
+                                          </ToolBar>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" maxWidth="96.0" minWidth="96.0" prefWidth="96.0" text="Telefone">
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="phoneNumberContatosClienteTextField" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <HBox minWidth="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
                  </tabs>
               </TabPane>
           </children>

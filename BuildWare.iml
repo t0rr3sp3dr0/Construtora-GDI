@@ -12,8 +12,8 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Maven: com.oracle.jdbc:ojdbc8:12.2.0.1" level="project" />
-    <orderEntry type="library" exported="" name="Maven: com.oracle.jdbc:ucp:12.2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.jdbc:ojdbc8:12.2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.jdbc:ucp:12.2.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.mashape.unirest:unirest-java:1.4.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.3.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.3.3" level="project" />

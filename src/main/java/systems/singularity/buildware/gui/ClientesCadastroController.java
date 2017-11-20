@@ -10,12 +10,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import systems.singularity.buildware.db.Repositories;
 import systems.singularity.buildware.enums.Gender;
 import systems.singularity.buildware.enums.MaritalStatus;
 import systems.singularity.buildware.models.Address;
 import systems.singularity.buildware.models.Customer;
 import systems.singularity.buildware.models.Person;
+import systems.singularity.buildware.models.Phone;
 import systems.singularity.buildware.util.AsyncCallable;
 import systems.singularity.buildware.util.ComboBoxAutoComplete;
 import systems.singularity.buildware.util.Postmon;
@@ -25,9 +27,10 @@ import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -35,27 +38,14 @@ import java.util.stream.Collectors;
  * © 2016 Singularity Systems
  */
 public class ClientesCadastroController implements Initializable {
-
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
-
     @FXML // fx:id="generoClienteComboBox"
     private ComboBox<Gender> generoClienteComboBox; // Value injected by FXMLLoader
-
-    @FXML // fx:id="profissaoClienteTableColumn"
-    private TableColumn<Customer, String> profissaoClienteTableColumn; // Value injected by FXMLLoader
 
     @FXML // fx:id="profissaoClienteTextField"
     private TextField profissaoClienteTextField; // Value injected by FXMLLoader
 
-    @FXML // fx:id="stateClienteTextField"
-    private TextField stateClienteTextField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="estadoCivilClienteComboBox"
-    private ComboBox<MaritalStatus> estadoCivilClienteComboBox; // Value injected by FXMLLoader
+    @FXML // fx:id="phoneNumberContatosClienteTextField"
+    private TextField phoneNumberContatosClienteTextField; // Value injected by FXMLLoader
 
     @FXML // fx:id="addClienteButton"
     private Button addClienteButton; // Value injected by FXMLLoader
@@ -63,11 +53,41 @@ public class ClientesCadastroController implements Initializable {
     @FXML // fx:id="saveClienteButton"
     private Button saveClienteButton; // Value injected by FXMLLoader
 
-    @FXML // fx:id="streetClienteTextField"
-    private TextField streetClienteTextField; // Value injected by FXMLLoader
-
     @FXML // fx:id="complementClienteTextField"
     private TextField complementClienteTextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="emailClienteColumn"
+    private TableColumn<Customer, String> emailClienteColumn; // Value injected by FXMLLoader
+
+    @FXML // fx:id="nameClienteTextField"
+    private TextField nameClienteTextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="contatosClienteTableView"
+    private TableView<Phone> contatosClienteTableView; // Value injected by FXMLLoader
+
+    @FXML // fx:id="deleteContatosClienteButton"
+    private Button deleteContatosClienteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="cityClienteTextField"
+    private TextField cityClienteTextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="cpfClienteTextField"
+    private TextField cpfClienteTextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="addContatosClienteButton"
+    private Button addContatosClienteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="profissaoClienteTableColumn"
+    private TableColumn<Customer, String> profissaoClienteTableColumn; // Value injected by FXMLLoader
+
+    @FXML // fx:id="stateClienteTextField"
+    private TextField stateClienteTextField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="estadoCivilClienteComboBox"
+    private ComboBox<MaritalStatus> estadoCivilClienteComboBox; // Value injected by FXMLLoader
+
+    @FXML // fx:id="streetClienteTextField"
+    private TextField streetClienteTextField; // Value injected by FXMLLoader
 
     @FXML // fx:id="clienteTableColumn"
     private TableColumn<Customer, String> clienteTableColumn; // Value injected by FXMLLoader
@@ -90,23 +110,20 @@ public class ClientesCadastroController implements Initializable {
     @FXML // fx:id="clientesTableView"
     private TableView<Customer> clientesTableView; // Value injected by FXMLLoader
 
+    @FXML // fx:id="editContatosClienteButton"
+    private Button editContatosClienteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="saveContatosClienteButton"
+    private Button saveContatosClienteButton; // Value injected by FXMLLoader
+
+    @FXML // fx:id="phoneNumberClientesTableColumn"
+    private TableColumn<Phone, String> phoneNumberClientesTableColumn; // Value injected by FXMLLoader
+
     @FXML // fx:id="emailClienteTextField"
     private TextField emailClienteTextField; // Value injected by FXMLLoader
 
-    @FXML // fx:id="emailClienteColumn"
-    private TableColumn<Customer, String> emailClienteColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="nameClienteTextField"
-    private TextField nameClienteTextField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="cityClienteTextField"
-    private TextField cityClienteTextField; // Value injected by FXMLLoader
-
     @FXML // fx:id="cpfClienteTableColumn"
     private TableColumn<Customer, String> cpfClienteTableColumn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="cpfClienteTextField"
-    private TextField cpfClienteTextField; // Value injected by FXMLLoader
 
     @FXML // fx:id="neighborhoodClienteTextField"
     private TextField neighborhoodClienteTextField; // Value injected by FXMLLoader
@@ -123,9 +140,12 @@ public class ClientesCadastroController implements Initializable {
 
         SelectionModel<Customer> selectionModel = clientesTableView.getSelectionModel();
         selectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue == null)
+            refreshContatos(null);
+
+            if (newValue == null) {
                 clearFields();
-            else {
+                clearFieldsContatos();
+            } else {
                 nameClienteTextField.setText(newValue.getPerson().getName());
                 birthdateClienteDatePicker.setValue(new Date(newValue.getPerson().getBirthdate().getTime()).toLocalDate());
                 generoClienteComboBox.getSelectionModel().select(newValue.getPerson().getGender());
@@ -188,6 +208,7 @@ public class ClientesCadastroController implements Initializable {
                     Repositories.address.update(customer.getPerson().getAddress());
                 }
                 refresh(customer);
+                refreshContatos(null);
             } catch (SQLException e) {
                 StageTools.throwable(e, true);
                 setEditable(true);
@@ -204,6 +225,7 @@ public class ClientesCadastroController implements Initializable {
                     Repositories.person.remove(customer.getPerson().getId());
                     Repositories.address.remove(customer.getPerson().getAddress().getId());
                     refresh(null);
+                    refreshContatos(null);
                 } catch (SQLException e) {
                     StageTools.throwable(e, true);
                 }
@@ -226,11 +248,80 @@ public class ClientesCadastroController implements Initializable {
         estadoCivilClienteComboBox.setItems(FXCollections.observableArrayList(MaritalStatus.values()));
         new ComboBoxAutoComplete<>(estadoCivilClienteComboBox);
         //</editor-fold>
+
+        //<editor-fold desc="contatosCliente">
+        phoneNumberClientesTableColumn.setCellValueFactory(new PropertyValueFactory<>("number"));
+
+        SelectionModel<Phone> contatosSelectionModel = contatosClienteTableView.getSelectionModel();
+        contatosSelectionModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == null)
+                clearFieldsContatos();
+            else {
+                phoneNumberContatosClienteTextField.setText(newValue.getNumber());
+
+                setEditableContatos(false);
+            }
+        });
+
+        addContatosClienteButton.setOnAction(event -> {
+            contatosSelectionModel.clearSelection();
+            clearFieldsContatos();
+            setEditableContatos(true);
+        });
+        editContatosClienteButton.setOnAction(event -> setEditableContatos(true));
+        saveContatosClienteButton.setOnAction(event -> {
+            setEditableContatos(false);
+
+            boolean newContact = false;
+
+            Phone phone = contatosSelectionModel.getSelectedItem();
+            if (phone == null) {
+                newContact = true;
+                phone = new Phone();
+            }
+
+            phone.person(selectionModel.getSelectedItem().getPerson());
+            phone.setNumber(phoneNumberContatosClienteTextField.getText());
+
+            try {
+                if (newContact) {
+                    phone.id(Repositories.phone.insert(phone));
+                } else {
+                    Repositories.phone.update(phone);
+                }
+                refreshContatos(phone);
+            } catch (SQLException e) {
+                StageTools.throwable(e, true);
+                setEditable(true);
+            }
+        });
+        deleteContatosClienteButton.setOnAction(event -> {
+            Phone phone = contatosSelectionModel.getSelectedItem();
+            if (phone == null) {
+                clearFieldsContatos();
+                setEditableContatos(false);
+            } else
+                try {
+                    Repositories.phone.remove(phone.getId());
+                    refreshContatos(null);
+                } catch (SQLException e) {
+                    StageTools.throwable(e, true);
+                }
+
+            setEditableContatos(false);
+        });
+
+        clearFieldsContatos();
+        setEditableContatos(false);
+        //</editor-fold>
     }
 
     //<editor-fold desc="clientesTableView">
     public void refresh(Customer select) {
-        Platform.runLater(() -> clientesTableView.setDisable(true));
+        Platform.runLater(() -> {
+            clientesTableView.setDisable(true);
+            clientesTableView.setItems(FXCollections.observableList(Collections.emptyList()));
+        });
 
         new AsyncCallable(() -> {
             List<Customer> list = Repositories.customer.getAll().stream().map(customer -> {
@@ -318,6 +409,48 @@ public class ClientesCadastroController implements Initializable {
         editClienteButton.setDisable(edit);
         saveClienteButton.setDisable(save);
         deleteClienteButton.setDisable(delete);
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="contatosClienteTableView">
+    public void refreshContatos(Phone select) {
+        Platform.runLater(() -> {
+            contatosClienteTableView.setDisable(true);
+            contatosClienteTableView.setItems(FXCollections.observableList(Collections.emptyList()));
+        });
+
+        Customer customer = clientesTableView.getSelectionModel().getSelectedItem();
+        Person person = customer != null ? customer.getPerson() : null;
+
+        new AsyncCallable(() -> {
+            List<Phone> list = Repositories.phone.getAll().stream().filter(phone -> phone.getPerson().equals(person)).collect(Collectors.toList());
+            ObservableList<Phone> observableList = FXCollections.observableList(list);
+            SortedList<Phone> sortedList = new SortedList<>(observableList);
+
+            Platform.runLater(() -> {
+                contatosClienteTableView.setItems(sortedList);
+
+                contatosClienteTableView.setDisable(false);
+                contatosClienteTableView.getSelectionModel().select(select);
+            });
+
+            return null;
+        }).start();
+    }
+
+    private void clearFieldsContatos() {
+        phoneNumberContatosClienteTextField.setText("");
+    }
+
+    private void setEditableContatos(boolean b) {
+        phoneNumberContatosClienteTextField.setEditable(b);
+    }
+
+    private void disableButtonsContatos(boolean add, boolean edit, boolean save, boolean delete) {
+        addContatosClienteButton.setDisable(add);
+        editContatosClienteButton.setDisable(edit);
+        saveContatosClienteButton.setDisable(save);
+        deleteContatosClienteButton.setDisable(delete);
     }
     //</editor-fold>
 }
